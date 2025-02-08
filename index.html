@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="Assets/icon.png">
+    <title>NutriScan</title>
+    <link rel="stylesheet" href="style.css">
+    <script src='https://unpkg.com/tesseract.js@4.1.1/dist/tesseract.min.js'></script>
+</head>
+<body>
+    <!-- heading -->
+    <header>
+        <div class="header-container">
+            <div class="logo-section">
+                <img src="Assets/icon-title.png" alt="NutriScan Logo" class="logo-icon">
+                <h1 class="title">NutriScan</h1>
+            </div>
+            <nav class="nav-links">
+                <a href="#" class="active">Home</a>
+                <a href="#">About</a>
+                <a href="#">Guide</a>
+            </nav>
+        </div>
+    </header>
+    <!-- banner -->
+    <div class="banner">
+        <div class="banner-content">
+            <h2 class="banner-title">Understand Your Food</h2>
+            <p class="banner-subtitle">Scan food labels to make healthier choices</p>
+        </div>
+    </div>
+  <!-- upload-img -->
+    <div class="container">
+        <div class="upload-img">
+            <div class="upload-controls">
+                  
+                <div class="product-input">
+                    <input type="text" id="productName" placeholder="Enter product name" class="product-name-input">
+                </div>
+                <button class="upload-btn">Upload Food Label</button>
+                <input type="file" accept="image/*" id="imageUpload">
+              
+                
+                <div class="upload-controls">
+                    <button class="scan-btn">Scan Label</button>
+                    <div class="process-status" style="display: none;">
+                        <div class="process-spinner"></div>
+                        <div class="process-text">Processing your image<span class="dots"></span></div>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="imagePreview">
+                <p class="preview-placeholder">Image preview will appear here</p>
+            </div>
+        </div>
+        <div class="results" id="resultsSection">
+            <div class="results-header">
+                <h2>Product Analysis</h2>
+                <button class="minimize-button" onclick="toggleResults()">≡</button>
+            </div>
+            <div class="results-content">
+                <div class="analysis">
+                    <div id="harmfulEffects"></div>
+                    <div id="summary"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
